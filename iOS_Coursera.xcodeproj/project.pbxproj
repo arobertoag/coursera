@@ -47,6 +47,7 @@
 		445362151D1385BC00788305 /* iOS_CourseraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_CourseraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		445362191D1385BC00788305 /* iOS_CourseraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_CourseraUITests.swift; sourceTree = "<group>"; };
 		4453621B1D1385BC00788305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44FC7A3D1D3D437A003A861B /* Juego_Memoria.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Juego_Memoria.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 		445361ED1D1385BB00788305 = {
 			isa = PBXGroup;
 			children = (
+				44FC7A3D1D3D437A003A861B /* Juego_Memoria.playground */,
 				445361F81D1385BC00788305 /* iOS_Coursera */,
 				4453620D1D1385BC00788305 /* iOS_CourseraTests */,
 				445362181D1385BC00788305 /* iOS_CourseraUITests */,
@@ -193,6 +195,7 @@
 				TargetAttributes = {
 					445361F51D1385BB00788305 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = XU7HYKUEV4;
 						ProvisioningStyle = Automatic;
 					};
 					445362091D1385BC00788305 = {
@@ -408,10 +411,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iOS_Coursera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Lamar-Universidad.iOS-Coursera";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -420,10 +426,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iOS_Coursera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Lamar-Universidad.iOS-Coursera";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -497,6 +506,7 @@
 				445362201D1385BC00788305 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		445362211D1385BC00788305 /* Build configuration list for PBXNativeTarget "iOS_CourseraTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +515,7 @@
 				445362231D1385BC00788305 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		445362241D1385BC00788305 /* Build configuration list for PBXNativeTarget "iOS_CourseraUITests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +524,7 @@
 				445362261D1385BC00788305 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
