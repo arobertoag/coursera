@@ -4,42 +4,75 @@ import UIKit
 
 
 enum Velocidades : Int {
-    case Apagado = 0, VelocidadBaja = 20, VelocidadMedia = 50, VelocidadAlta = 120
+    case Apagado = 0
+    case VelocidadBaja = 20
+    case VelocidadMedia = 50
+    case VelocidadAlta = 120
     
-    init (velocidadInicial : Velocidades) {
+    init(velocidadInicial : Velocidades) {
         self = velocidadInicial
     }
-}
-
-class Auto {
-    var velocidad : Velocidades
     
-    init () {
-        velocidad = Velocidades(velocidadInicial: Velocidades.Apagado)
-    }
-    
-    func cambioDeVelocidad () -> (actual : Int, velocidadEnCadena : String) {
-        let aux = velocidad
-        switch (velocidad) {
-        case .Apagado:
-            velocidad = Velocidades.VelocidadBaja
-            return (aux.rawValue , "Velocidad baja")
-        case .VelocidadBaja:
-            velocidad = Velocidades.VelocidadMedia
-            return (aux.rawValue , "Velocidad media")
-        case .VelocidadMedia:
-            velocidad = Velocidades.VelocidadAlta
-            return (aux.rawValue , "Velocidad alta")
-        case .VelocidadAlta:
-            velocidad = Velocidades.VelocidadMedia
-            return (aux.rawValue , "Velocidad media")
+    func velocidadStr() -> String {
+        switch self.rawValue {
+            
+        case Velocidades.Apagado.rawValue:
+            return "Apagado"
+            
+        case Velocidades.VelocidadBaja.rawValue:
+            return "Velocidad baja"
+            
+        case Velocidades.VelocidadMedia.rawValue:
+            return "Velocidad media"
+            
+        case Velocidades.VelocidadAlta.rawValue:
+            return "Velocidad alta"
+            
+        default:
+            return "Neutro"
         }
     }
 }
 
+class Automovil {
+    var velocidad : Velocidades
+    
+    init() {
+        self.velocidad = Velocidades(velocidadInicial : Velocidades.Apagado)
+    }
+    
+    func cambioDeVelocidad() -> (actual : Int, velocidadEnCadena : String) {
+        
+        switch self.velocidad.rawValue {
+            
+        case Velocidades.Apagado.rawValue:
+            self.velocidad = Velocidades.VelocidadBaja
+            
+        case Velocidades.VelocidadBaja.rawValue:
+            self.velocidad = Velocidades.VelocidadMedia
+            
+        case Velocidades.VelocidadMedia.rawValue:
+            self.velocidad = Velocidades.VelocidadAlta
+            
+        case Velocidades.VelocidadAlta.rawValue:
+            self.velocidad = Velocidades.VelocidadMedia
+            
+        default:
+            self.velocidad = Velocidades.Apagado
+        }
+        
+        return (self.velocidad.rawValue, velocidad.velocidadStr())
+        
+    }
+}
 
-var auto = Auto()
+var auto = Automovil()
 
-for  _  in 0...19 {
-    print ("\(auto.cambioDeVelocidad())")
+for index in 1...20 {
+    if (index == 1) {
+        print("\(auto.velocidad.rawValue), \(auto.velocidad)")
+    }
+    
+    var valores = auto.cambioDeVelocidad()
+    print("\(valores.actual), \(valores.velocidadEnCadena)")
 }
